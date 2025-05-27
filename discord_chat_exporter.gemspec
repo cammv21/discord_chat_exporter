@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "discord_chat_exporter"
-  spec.version       = "0.1.0"
+  spec.version       = "0.2.0"
   spec.summary       = "Exporta chats de canales de Discord usando discordrb"
   spec.description   = "Una gema para exportar mensajes de canales de Discord a texto."
   spec.authors       = ["Juan Camilo Muñoz Valencia"]

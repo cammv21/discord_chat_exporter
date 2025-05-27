@@ -2,13 +2,14 @@
 require "discord_chat_exporter"
 
 if ARGV.size < 2
-  puts "Uso: discord_chat_exporter TOKEN CHANNEL_ID [ARCHIVO_SALIDA]"
+  puts "Uso: discord_chat_exporter TOKEN CHANNEL_ID [ARCHIVO_SALIDA] [FORMATO(txt|json)]"
   exit 1
 end
 
 token = ARGV[0]
 channel_id = ARGV[1].to_i
 filename = ARGV[2] || "export_chat.txt"
+format = (ARGV[3] || "txt").downcase.to_sym
 
 exporter = DiscordChatExporter::Exporter.new(token: token, channel_id: channel_id)
-exporter.export(filename)
+exporter.export(filename, format: format)

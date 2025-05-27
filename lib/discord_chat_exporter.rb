@@ -1,11 +1,10 @@
-require "discord_chat_exporter/exporter"
+require_relative "discord_chat_exporter/exporter"
 
 module DiscordChatExporter
   class << self
     attr_accessor :configuration
   end
 
-  # Clase de configuración interna
   class Configuration
     attr_accessor :default_filename, :default_limit, :log_verbose
 
@@ -16,7 +15,6 @@ module DiscordChatExporter
     end
   end
 
-  # Método para acceder/configurar la configuración global
   def self.configure
     self.configuration ||= Configuration.new
     yield(configuration)
